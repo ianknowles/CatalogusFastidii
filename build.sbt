@@ -6,6 +6,7 @@ lazy val root = (project in file("."))
   .enablePlugins(PlayScala)
   .settings(
     name := """CatalogusFastīdiī""",
+    pipelineStages := Seq(digest, gzip),
     libraryDependencies ++= Seq(
       guice,
       "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
