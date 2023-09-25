@@ -1,0 +1,17 @@
+CASE WHEN instr(flags, 'Article: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'Article: ') + 9), ' ') THEN substr(flags, instr(flags, 'Article: ') + 9, instr(substr(flags, instr(flags, 'Article: ') + 9), ' ') - 1) ELSE substr(flags, instr(flags, 'Article: ') + 9) END END
+CASE WHEN instr(flags, ' P: ') THEN CASE WHEN instr(substr(flags, instr(flags, ' P: ') + 4), ' ') THEN substr(flags, instr(flags, ' P: ') + 4, instr(substr(flags, instr(flags, ' P: ') + 4), ' ') - 1) ELSE substr(flags, instr(flags, ' P: ') + 4) END END
+CASE WHEN instr(flags, 'E: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'E: ') + 3), ' ') THEN substr(flags, instr(flags, 'E: ') + 3, instr(substr(flags, instr(flags, 'E: ') + 3), ' ') - 1) ELSE substr(flags, instr(flags, 'E: ') + 3) END END
+CASE WHEN instr(flags, 'Wiki: "') THEN substr(flags, instr(flags, 'Wiki: "') + 7, instr(substr(flags, instr(flags, 'Wiki: "') + 7), '"') - 1) END
+CASE WHEN instr(flags, 'Manuel: "') THEN substr(flags, instr(flags, 'Manuel: "') + 9, instr(substr(flags, instr(flags, 'Manuel: "') + 9), '"') - 1) END
+CASE WHEN instr(flags, 'Atk: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'Atk: ') + 5), ' ') THEN substr(flags, instr(flags, 'Atk: ') + 5, instr(substr(flags, instr(flags, 'Atk: ') + 5), ' ') - 1) ELSE substr(flags, instr(flags, 'Atk: ') + 5) END END
+CASE WHEN instr(flags, 'Def: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'Def: ') + 5), ' ') THEN substr(flags, instr(flags, 'Def: ') + 5, instr(substr(flags, instr(flags, 'Def: ') + 5), ' ') - 1) ELSE substr(flags, instr(flags, 'Def: ') + 5) END END
+CASE WHEN instr(flags, 'HP: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'HP: ') + 4), ' ') THEN substr(flags, instr(flags, 'HP: ') + 4, instr(substr(flags, instr(flags, 'HP: ') + 4), ' ') - 1) ELSE substr(flags, instr(flags, 'HP: ') + 4) END END
+CASE WHEN instr(flags, 'Init: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'Init: ') + 6), ' ') THEN substr(flags, instr(flags, 'Init: ') + 6, instr(substr(flags, instr(flags, 'Init: ') + 6), ' ') - 1) ELSE substr(flags, instr(flags, 'Init: ') + 6) END END
+CASE WHEN instr(flags, 'Scale: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'Scale: ') + 7), ' ') THEN substr(flags, instr(flags, 'Scale: ') + 7, instr(substr(flags, instr(flags, 'Scale: ') + 7), ' ') - 1) ELSE substr(flags, instr(flags, 'Scale: ') + 7) END END
+CASE WHEN instr(flags, 'Cap: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'Cap: ') + 5), ' ') THEN substr(flags, instr(flags, 'Cap: ') + 5, instr(substr(flags, instr(flags, 'Cap: ') + 5), ' ') - 1) ELSE substr(flags, instr(flags, 'Cap: ') + 5) END END
+CASE WHEN instr(flags, 'Floor: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'Floor: ') + 7), ' ') THEN substr(flags, instr(flags, 'Floor: ') + 7, instr(substr(flags, instr(flags, 'Floor: ') + 7), ' ') - 1) ELSE substr(flags, instr(flags, 'Floor: ') + 7) END END
+CASE WHEN instr(flags, 'Meat: ') THEN CASE WHEN instr(substr(flags, instr(flags, 'Meat: ') + 6), ' ') THEN substr(flags, instr(flags, 'Meat: ') + 6, instr(substr(flags, instr(flags, 'Meat: ') + 6), ' ') - 1) ELSE substr(flags, instr(flags, 'Meat: ') + 6) END END
+//EA
+//ED
+CASE WHEN wish_override IS NOT NULL THEN wish_override WHEN boss THEN FALSE WHEN NOT manuel THEN FALSE ELSE copy END
+// https://github.com/kolmafia/kolmafia/commits/main/src/data/monsters.txt
