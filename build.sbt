@@ -8,7 +8,6 @@ lazy val root = (project in file("."))
     name := """CatalogusFastīdiī""",
     pipelineStages := Seq(digest, gzip),
     libraryDependencies ++= Seq(
-      guice,
       "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
     )
   )
