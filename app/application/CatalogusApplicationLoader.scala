@@ -1,3 +1,5 @@
+package application
+
 import controllers.HomeController
 
 import play.api.{Application, ApplicationLoader, BuiltInComponentsFromContext, LoggerConfigurator}
