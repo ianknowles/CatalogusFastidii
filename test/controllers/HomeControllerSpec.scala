@@ -20,6 +20,7 @@ class HomeControllerSpec extends PlaySpec with CatalogusOneAppPerTest {
 
 			status(home) mustBe OK
 			contentType(home) mustBe Some("text/html")
+			charset(home) mustBe Some("utf-8")
 			contentAsString(home) must include("Welcome to Play")
 		}
 
@@ -29,6 +30,7 @@ class HomeControllerSpec extends PlaySpec with CatalogusOneAppPerTest {
 
 			status(home) mustBe OK
 			contentType(home) mustBe Some("text/html")
+			charset(home) mustBe Some("utf-8")
 			contentAsString(home) must include("Welcome to Play")
 			contentAsString(home) must include("Catalogus Fastīdiī")
 		}
