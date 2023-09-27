@@ -14,7 +14,7 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents) e
 	/**
 	 * Render the index page from its HTML template
 	 */
-	def index() = Action { implicit request: Request[AnyContent] =>
+	def index(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
 		Ok(views.html.index())
 	}
 }
