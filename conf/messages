@@ -1,1 +1,5 @@
 # https://www.playframework.com/documentation/latest/ScalaI18N
+
+# --- Site and Project
+site.title=Catalogus Fastīdiī
+project.copyright=Ian Knowles
