@@ -19,9 +19,12 @@
 	</head>
 	<body data-bs-theme="dark">
 		@components.navigation.header()
-		<main>
-		@content
-		</main>
+		<div class="d-flex flex-row">
+			<aside class="sticky-top vh-100 bg-body-secondary p-2">@components.navigation.sidebar()</aside>
+			<main>
+			@content
+			</main>
+		</div>
 
 		<script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
 	</body>
