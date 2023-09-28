@@ -1,0 +1,19 @@
+@import "lib/bootstrap/scss/bootstrap";
+
+body {
+	@extend .vh-100;
+	@extend .d-flex;
+	@extend .flex-column;
+	@extend .justify-content-between;
+}
+
+main {
+	@extend .px-0;
+	@extend .flex-fill;
+}
+
+@media (prefers-color-scheme: dark) {
+	img {
+		filter: invert(100%);
+	}
+}
