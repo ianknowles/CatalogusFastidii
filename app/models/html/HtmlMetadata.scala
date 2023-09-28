@@ -1,4 +1,4 @@
-package models
+package models.html
 
 /**
  * Metadata for a specific HTML page of the website
