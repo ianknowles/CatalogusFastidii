@@ -15,6 +15,6 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents, i
 	 * Render the index page from its HTML template
 	 */
 	def index(): Action[AnyContent] = Action { implicit request: Request[AnyContent] =>
-		Ok(views.html.index())
+		Ok(views.html.pages.index())
 	}
 }
