@@ -15,6 +15,7 @@
 		<title>@{if (metadata.title.nonEmpty) s"${metadata.title} | ${messages("site.title")}" else messages("site.title")}</title>
 		<link rel="stylesheet" media="screen" type="text/css" href="@routes.Assets.versioned("stylesheets/generated/main.css")" />
 		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="@routes.Assets.versioned("images/icons/favicon.ico")" />
+		<link rel="preload" as="font" type="font/woff2" href="@routes.Assets.versioned("fonts/FetteUNZFraktur.woff2")" />
 	</head>
 	<body data-bs-theme="dark">
 		<main>
