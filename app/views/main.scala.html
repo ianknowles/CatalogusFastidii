@@ -13,7 +13,7 @@
 		@head.metadata_tags(metadata)
 		<title>@{if (metadata.title.nonEmpty) s"${metadata.title} | ${messages("site.title")}" else messages("site.title")}</title>
 		<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-		<link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="@routes.Assets.versioned("images/icons/favicon.ico")" />
 	</head>
 	<body>
 		<main>
