@@ -15,7 +15,7 @@ class HomeControllerSpec extends PlaySpec with CatalogusOneAppPerTest {
 	"HomeController GET" should {
 
 		"render the index page from a new instance of controller" in {
-			val controller = new HomeController(stubControllerComponents())
+			val controller = new HomeController(stubControllerComponents(), app.configuration)
 			val home = controller.index().apply(FakeRequest(GET, "/"))
 
 			status(home) mustBe OK
@@ -32,7 +32,7 @@ class HomeControllerSpec extends PlaySpec with CatalogusOneAppPerTest {
 			contentType(home) mustBe Some("text/html")
 			charset(home) mustBe Some("utf-8")
 			contentAsString(home) must include("Welcome to Play")
-			contentAsString(home) must include("Catalogus Fastīdiī")
+			contentAsString(home) must include("<meta property=\"og:image:alt\" content=\"The index page of the Catalogus Fastīdiī website.\" />")
 		}
 	}
 }

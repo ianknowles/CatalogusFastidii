@@ -1,0 +1,9 @@
+# https://www.playframework.com/documentation/latest/ScalaI18N
+
+# --- Site and Project
+site.desc=cataloguing a game for completionists
+site.keywords=Kingdom of Loathing, KoL, video games, data, REST API
+site.preview=The index page of the Catalogus Fastīdiī website.
+
+# --- Pages
+page.index.title=Index

@@ -1,0 +1,37 @@
+@import play.api.Configuration
+@*
+* Metadata properties commonly used for site previews on search engines and social media
+*@
+@(metadata: HtmlMetadata)(implicit config: Configuration, langs: Langs, messages: Messages)
+<meta name="description" content="@{metadata.description}" />
+<meta name="author" content="@messages("project.copyright")" />
+<meta name="keywords" content="@messages("site.keywords")" />
+
+@* Open Graph metadata for link previews https://ogp.me/ *@
+@* required *@
+<meta property="og:type" content="@{metadata.ogType}" />
+<meta property="og:url" content="https://@{config.get[Seq[String]]("play.filters.hosts.allowed").head}@{metadata.canonicalUrl}" />
+<meta property="og:title" content="@{metadata.title}" />
+<meta property="og:image" content="@{metadata.imageUrl}" />
+<meta property="og:image:alt" content="@{metadata.imageAlt}" />
+@* image optional *@
+@* og:image:url *@
+@* og:image:secure_url *@
+@* og:image:type *@
+@* og:image:width *@
+@* og:image:height *@
+@* optional *@
+@* og:audio *@
+<meta property="og:description" content="@{metadata.description}" />
+<meta property="og:determiner" content="@{metadata.determiner}" />
+<meta property="og:locale" content="@{messages.lang.locale}" />
+@for(locale <- langs.availables.map(_.toLocale)) {
+<meta property="og:locale:alternate" content="@locale" />
+}
+<meta property="og:site_name" content="@messages("site.title")" />
+@* og:video *@
+
+@* Twitter card metadata for link previews
+* Most values have open-graph fallbacks, so only overrides or unique properties should be defined here
+*@
+<meta name="twitter:card" content="summary_large_image" />

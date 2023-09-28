@@ -31,7 +31,7 @@ class CatalogusComponents(context: ApplicationLoader.Context)
 		with HttpFiltersComponents
 		with controllers.AssetsComponents {
 
-	lazy val homeController: HomeController = new controllers.HomeController(controllerComponents)
+	lazy val homeController: HomeController = new controllers.HomeController(controllerComponents, configuration)
 
 	lazy val router: Router = new Routes(httpErrorHandler, homeController, assets)
 }

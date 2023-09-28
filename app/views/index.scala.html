@@ -1,8 +1,16 @@
+@import play.api.Configuration
 @*
 * Index page
 *@
-@()(implicit messages: Messages)
+@()(implicit config: Configuration, langs: Langs, messages: Messages)
 
-@main("Welcome to Play") {
+@main(HtmlMetadata(
+	canonicalUrl=routes.HomeController.index().toString,
+	title=messages("page.index.title"),
+	imageUrl=routes.Assets.versioned("images/site_preview.png").toString,
+	imageAlt=messages("site.preview"),
+	description=messages("site.desc"),
+	determiner="")
+) {
 	<h1>Welcome to Play!</h1>
 }

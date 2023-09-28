@@ -1,14 +1,16 @@
+@import play.api.Configuration
 @*
 * Main rendering template for all pages.
 *@
-@(title: String)(content: Html)(implicit messages: Messages)
+@(metadata: HtmlMetadata)(content: Html)(implicit config: Configuration, langs: Langs, messages: Messages)
 
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		<title>@title | @messages("site.title")</title>
+		@head.metadata_tags(metadata)
+		<title>@{if (metadata.title.nonEmpty) s"${metadata.title} | ${messages("site.title")}" else messages("site.title")}</title>
 		<link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
 		<link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
 	</head>

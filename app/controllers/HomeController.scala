@@ -9,7 +9,7 @@ import play.api.mvc._
  * Controller for simple pages
  */
 @Singleton
-class HomeController @Inject()(val controllerComponents: ControllerComponents) extends BaseController with I18nSupport {
+class HomeController @Inject()(val controllerComponents: ControllerComponents, implicit val config: Configuration) extends BaseController with I18nSupport {
 
 	/**
 	 * Render the index page from its HTML template
