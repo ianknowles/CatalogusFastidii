@@ -10,12 +10,13 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<meta name="color-scheme" content="dark" />
 		@head.metadata_tags(metadata)
 		<title>@{if (metadata.title.nonEmpty) s"${metadata.title} | ${messages("site.title")}" else messages("site.title")}</title>
 		<link rel="stylesheet" media="screen" type="text/css" href="@routes.Assets.versioned("stylesheets/generated/main.css")" />
 		<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="@routes.Assets.versioned("images/icons/favicon.ico")" />
 	</head>
-	<body>
+	<body data-bs-theme="dark">
 		<main>
 		@content
 		</main>
